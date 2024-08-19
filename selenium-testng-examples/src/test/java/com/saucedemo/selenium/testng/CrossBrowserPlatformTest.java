@@ -39,6 +39,7 @@ public class CrossBrowserPlatformTest extends SauceParameterizedBaseTest {
     sauceOptions.setCapability("browserName", parameters[0]);
     sauceOptions.setCapability("browserVersion", parameters[1]);
     sauceOptions.setCapability("platformName", parameters[2]);
+    sauceOptions.setCapability("tunnelIdentifier", "abe-sc5-default-tunnel");
     return sauceOptions;
   }
 

@@ -11,7 +11,7 @@ This folder contains Selenium examples specific to TestNG
 ### Single Browser Test in Parallel
 ```bash
 cd selenium-testng-examples
-mvn test -Dtest=com.saucedemo.ParallelSingleBrowserTest
+mvn test -Dtest=com.saucedemo.selenium.testng.ParallelSingleBrowserTest
 ```
 <details>
   <summary>Your output will look like this if done correctly</summary>
@@ -102,7 +102,7 @@ Test Job Link: https://app.saucelabs.com/tests/2d3aa210b61f42d092b9dc2aeb7bffcc
 ### Cross Browser/Platform Test in Parallel
 ```bash
 cd selenium-testng-examples
-mvn test -Dtest=com.saucedemo.CrossBrowserPlatformTest
+mvn test -Dtest=com.saucedemo.selenium.testng.CrossBrowserPlatformTest
 ```
 <details>
   <summary>Your output will look like this if done correctly</summary>
