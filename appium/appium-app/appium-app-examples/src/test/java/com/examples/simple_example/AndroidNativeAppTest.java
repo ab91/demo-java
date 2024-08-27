@@ -49,12 +49,12 @@ public class AndroidNativeAppTest {
 
         switch (region) {
             case "us":
-                url = new URL(SAUCE_US_URL);
+                url = new URL("https://ondemand.us-west-1.saucelabs.com:443/wd/hub");
                 System.out.println("Sauce REGION US");
                 break;
             case "eu":
             default:
-                url = new URL(SAUCE_EU_URL);
+                url = new URL("https://ondemand.us-west-1.saucelabs.com:443/wd/hub");
                 System.out.println("Sauce REGION EU");
                 break;
         }
@@ -66,7 +66,7 @@ public class AndroidNativeAppTest {
 
         capabilities.setCapability("platformName", "Android");
         capabilities.setCapability("appium:automationName", "UiAutomator2");
-        if (rdc.equals("true")) {
+        if (rdc.equals("false")) {
             //Allocate any available samsung device with Android version 12
             capabilities.setCapability("appium:deviceName", "Samsung.*");
             sauceOptions.setCapability("resigningEnabled", true);
@@ -79,7 +79,7 @@ public class AndroidNativeAppTest {
             sauceOptions.setCapability("appiumVersion", "2.11.0");
         }
         capabilities.setCapability("appium:platformVersion", "12");
-        String appName = "SauceLabs-Demo-App.apk";
+        String appName = "mda-2.0.2-23.apk";
         capabilities.setCapability("appium:app", "storage:filename=" +appName);
 
         // Sauce capabilities
@@ -90,6 +90,7 @@ public class AndroidNativeAppTest {
         sauceOptions.setCapability("tags", tags);
         sauceOptions.setCapability("username", System.getenv("SAUCE_USERNAME"));
         sauceOptions.setCapability("accessKey", System.getenv("SAUCE_ACCESS_KEY"));
+        sauceOptions.setCapability("tunnelName", "charles-tunnel");
 
 
         capabilities.setCapability("sauce:options", sauceOptions);
